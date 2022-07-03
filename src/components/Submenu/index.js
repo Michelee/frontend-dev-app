@@ -7,7 +7,7 @@ import styles from "./Submenu.module.css";
 
 const Submenu = ({ handleClose, openModal, headerLinks }) => {
   const location = useLocation();
-  const links = headerLinks.filter((item) => item.type.includes("submenu"));
+  const links = headerLinks ? headerLinks.filter((item) => item.type.includes("submenu")) : [];
 
   const countries = [
     "global",
@@ -20,7 +20,10 @@ const Submenu = ({ handleClose, openModal, headerLinks }) => {
   ];
 
   return (
-    <div data-testid="submenu" className={openModal ? styles.submenuActive : styles.submenuHidden}>
+    <div
+      data-testid="submenu"
+      className={openModal ? styles.submenuActive : styles.submenuHidden}
+    >
       <div className={styles.topSection}>
         <Link to="/" className={styles.logo}>
           <img src={WhiteLogo} alt="Dept" title="Dept" />

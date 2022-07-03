@@ -9,7 +9,7 @@ import styles from "./Header.module.css";
 const Header = ({ headerLinks }) => {
   const [openModal, setOpenModal] = useState(false)
   const location = useLocation();
-  const links = headerLinks.filter(item => item.type.includes('header'))
+  const links = headerLinks ? headerLinks.filter((item) => item.type.includes("header")) : [];
 
   return (
     <header className={styles.header}>
@@ -32,7 +32,7 @@ const Header = ({ headerLinks }) => {
           <DotsIcon />
         </button>
       </div>
-      <Submenu openModal={openModal} handleClose={() => setOpenModal(false)} />
+      <Submenu headerLinks={headerLinks} openModal={openModal} handleClose={() => setOpenModal(false)} />
     </header>
   );
 };

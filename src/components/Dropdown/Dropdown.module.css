@@ -1,0 +1,29 @@
+.dropdown {
+  display: inline-flex;
+}
+
+.dropdownLabel {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 3px;
+}
+
+.dropdownSelect {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  margin-left: 5px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  border-bottom: 1px solid black;
+}
+
+
+@media (min-width: 1023px) {
+  .dropdownLabel,
+  .dropdownSelect {
+    font-size: 26px;
+  }
+}
