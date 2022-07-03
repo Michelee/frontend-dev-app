@@ -1,4 +1,4 @@
-export default [
+export const headerLinks = [
   {
     path: "/",
     label: "Home",

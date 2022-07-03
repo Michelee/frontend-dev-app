@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Header";
-import headerLinks from "../../constants/headerLinks";
+import { headerLinks } from "../../constants/headerLinks";
 
 const Layout = ({ children }) => (
   <div className="">

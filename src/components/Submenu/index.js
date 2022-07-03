@@ -1,12 +1,11 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import WhiteLogo from "../../assets/images/dept-logo-white.svg";
-import headerLinks from "../../constants/headerLinks";
 import XIcon from "../../assets/icons/x-icon.svg";
 import TriangleIcon from "../../assets/icons/triangle-icon.svg";
 import styles from "./Submenu.module.css";
 
-const Submenu = ({ handleClose, openModal }) => {
+const Submenu = ({ handleClose, openModal, headerLinks }) => {
   const location = useLocation();
   const links = headerLinks.filter((item) => item.type.includes("submenu"));
 
