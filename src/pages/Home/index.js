@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, memo } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import CardsGrid from "../../components/CardsGrid";
 import Dropdown from "../../components/Dropdown";
 import Layout from "../../components/Layout";
+import {
+  getAllPosts,
+  getState,
+  group,
+  filter,
+} from "../../features/posts/postsSlice";
 import styles from "./Home.module.css";
 
 const Home = () => {
-  const [filterBy, setFilterBy] = useState("");
-  const [groupBy, setGroupBy] = useState("");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllPosts());
+  }, [dispatch]);
+
+  const { posts } = useSelector(getState);
+  const { list, groupBy, filterBy, loading } = posts;
 
   return (
     <Layout activePage="home">
@@ -22,34 +36,40 @@ const Home = () => {
         <div className={styles.filtersContainer}>
           <Dropdown
             options={[
-              { id: 1, name: "group 1" },
-              { id: 2, name: "group 2" },
+              { id: 'category1', name: "Category 1" },
+              { id: 'category2', name: "Category 2" },
+              { id: 'category3', name: "Category 3" },
             ]}
             name="groupBy"
             dataTest="filter-dropdown"
             label="in"
             value={groupBy}
             defaultValue="all industries"
-            handleChange={setGroupBy}
+            handleChange={(e) => dispatch(group(e.target.value))}
             addClass={styles.filterDropdown}
           />
           <Dropdown
             options={[
-              { id: 1, name: "option1" },
-              { id: 2, name: "option2" },
+              { id: 'industry1', name: "Industry 1" },
+              { id: 'industry2', name: "Industry 2" },
+              { id: 'industry3', name: "Industry 3" },
             ]}
             name="filterBy"
             dataTest="filter-dropdown"
             label="Show me"
             value={filterBy}
             defaultValue="all work"
-            handleChange={setFilterBy}
+            handleChange={(e) => dispatch(filter(e.target.value))}
             addClass={styles.filterDropdown}
           />
+        </div>
+        <div className={styles.postGridContainer}>
+          {loading && <h4>Loading</h4>}
+          {list && list.length ? <CardsGrid list={list} /> : ""}
         </div>
       </div>
     </Layout>
   );
 };
 
-export default Home;
+export default memo(Home);

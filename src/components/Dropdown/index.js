@@ -14,14 +14,15 @@ const Dropdown = ({
   <div className={`${styles.dropdown} ${addClass}`}>
     <label className={styles.dropdownLabel}>{label}</label>
     <select
+      defaultValue={value}
       name={name}
       data-testid={dataTest}
       onChange={handleChange}
       className={styles.dropdownSelect}
     >
-      <option value="none">{defaultValue}</option>
+      <option value="">{defaultValue}</option>
       {options.map(({ id, name }) => (
-        <option key={id} value={id} selected={value === id}>
+        <option key={id} value={id}>
           {name}
         </option>
       ))}
