@@ -21,7 +21,7 @@ const Submenu = ({ handleClose, openModal }) => {
   ];
 
   return (
-    <div className={openModal ? styles.submenuActive : styles.submenuHidden}>
+    <div data-testid="submenu" className={openModal ? styles.submenuActive : styles.submenuHidden}>
       <div className={styles.topSection}>
         <Link to="/" className={styles.logo}>
           <img src={WhiteLogo} alt="Dept" title="Dept" />
