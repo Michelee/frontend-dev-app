@@ -1,15 +1,21 @@
-import React from 'react';
-import { screen, render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { store } from '../../app/store';
-import Home from '.';
+import React from "react";
+import { Router } from "react-router-dom";
+import { screen, render } from "@testing-library/react";
+import { createMemoryHistory } from "history";
+import { Provider } from "react-redux";
+import { store } from "../../app/store";
+import Home from ".";
 
-test('renders learn react link', () => {
+test("renders learn react link", () => {
+  const history = createMemoryHistory();
+
   render(
     <Provider store={store}>
-      <Home />
+      <Router location={history.location} navigator={history}>
+        <Home />
+      </Router>
     </Provider>
   );
 
-  expect(screen.getByText(/learn/i)).toBeInTheDocument();
+  expect(screen.getByText(/Home content/i)).toBeInTheDocument();
 });

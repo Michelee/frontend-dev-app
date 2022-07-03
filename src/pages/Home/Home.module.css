@@ -1,34 +1,40 @@
-.home {
-  text-align: center;
+.heroContainer {
+  position: relative;
+  background-image: url("../../assets/images/home-main-bg.png");
+  background-position: center;
+  background-size: contain;
+  height: calc(100vh - 60px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .home-logo {
-    animation: home-logo-float infinite 3s ease-in-out;
-  }
+.brandLabel {
+  display: block;
+  font-weight: 300;
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-bottom: 16px;
 }
 
-.home-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.mainText {
+  position: absolute;
+  bottom: 84px;
+  left: 56px;
+  color: white;
 }
 
-.home-link {
-  color: rgb(112, 76, 182);
+.mainText span {
+  margin-bottom: 32px;
 }
 
-@keyframes home-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
+.mainText p {
+  font-weight: 300;
+  max-width: 580px;
+  font-size: 34px;
+  margin: 0;
+}
+
+@media (min-width: 1023px) {
+  .heroContainer {
+    height: calc(100vh - 116px);
   }
 }
