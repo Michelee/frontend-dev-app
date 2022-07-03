@@ -1,7 +1,112 @@
 .header {
-  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px;
+  background-color: white;
 }
 
-.mainTitle {
-  font-weight: bold;
+.logo img {
+  width: 52px;
+  height: 15px;
 }
+
+.menuButton {
+  padding: 0 5px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  display: block;
+}
+
+.desktopMenu {
+  display: none;
+}
+
+.desktopMenu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  position: relative;
+}
+
+.desktopMenu li {
+  margin: 0 24px;
+  position: relative;
+}
+
+.activeLink {
+  border-bottom: 1px solid white;
+}
+
+.desktopMenu a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.desktopMenu a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.desktopMenu a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.moreButton {
+  background-color: transparent;
+  border: none;
+  margin-left: 48px;
+  cursor: pointer;
+}
+
+.moreButton svg {
+  width: 40px;
+}
+
+.moreButton path {
+  transition: transform 0.3s ease-out;
+}
+
+.moreButton:hover path:first-child {
+  transform: translateX(-4px);
+}
+
+.moreButton:hover path:last-child {
+  transform: translateX(4px);
+}
+
+@media (min-width: 1023px) {
+  .header {
+    background: #121212;
+    padding: 46px 55px;
+  }
+
+  .desktopMenu {
+    display: flex;
+  }
+
+  .menuButton {
+    display: none;
+  }
+
+  .logo img {
+    width: 73px;
+    height: 20px;
+  }
+}
+
+/* (min-width: 768px) and (max-width: 1199px), (min-width: 1200px), (min-width: 1440px) and (max-width: 1800px) */
