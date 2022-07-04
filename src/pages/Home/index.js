@@ -1,6 +1,7 @@
 import React, { useEffect, memo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CardsGrid from "../../components/CardsGrid";
+import ClientsSection from "../../components/ClientsSection";
 import Dropdown from "../../components/Dropdown";
 import Layout from "../../components/Layout";
 import {
@@ -67,6 +68,7 @@ const Home = () => {
           {loading && <h4>Loading</h4>}
           {list && list.length ? <CardsGrid list={list} /> : ""}
         </div>
+        <ClientsSection />
       </div>
     </Layout>
   );

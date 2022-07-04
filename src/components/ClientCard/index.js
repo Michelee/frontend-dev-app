@@ -5,7 +5,7 @@ import styles from "./ClientCard.module.css";
 
 const ClientCard = ({ cardInfo, type }) => {
   const { path, title, filename, company } = cardInfo;
-  const imgUrl = filename ? require(`../../assets/images/${filename}`) : "";
+  const imgUrl = filename ? require(`../../assets/images/posts/${filename}`) : "";
   const style = filename ? {
     backgroundImage: `linear-gradient(
       358.53deg,
