@@ -1,4 +1,4 @@
-export const headerLinks = [
+export const pageLinks = [
   {
     path: "/",
     label: "Home",
@@ -7,7 +7,7 @@ export const headerLinks = [
   {
     path: "/work",
     label: "Work",
-    type: "header,submenu",
+    type: "header,submenu,footer",
   },
   {
     path: "/culture",
@@ -17,7 +17,7 @@ export const headerLinks = [
   {
     path: "/services",
     label: "Services",
-    type: "header,submenu",
+    type: "header,submenu,footer",
   },
   {
     path: "/partners",
@@ -27,7 +27,12 @@ export const headerLinks = [
   {
     path: "/stories",
     label: "Stories",
-    type: "submenu",
+    type: "submenu,footer",
+  },
+  {
+    path: "/about",
+    label: "About",
+    type: "footer",
   },
   {
     path: "/insights",
@@ -37,7 +42,7 @@ export const headerLinks = [
   {
     path: "/careers",
     label: "Careers",
-    type: "header,submenu",
+    type: "header,submenu,footer",
   },
   {
     path: "/events",
@@ -47,6 +52,6 @@ export const headerLinks = [
   {
     path: "/contact",
     label: "Contact",
-    type: "header,submenu",
+    type: "header,submenu,footer",
   },
 ];

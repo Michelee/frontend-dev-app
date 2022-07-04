@@ -6,10 +6,10 @@ import DotsIcon from "../../assets/icons/DotsIcon";
 import Submenu from "../Submenu";
 import styles from "./Header.module.css";
 
-const Header = ({ headerLinks }) => {
+const Header = ({ pageLinks }) => {
   const [openModal, setOpenModal] = useState(false)
   const location = useLocation();
-  const links = headerLinks ? headerLinks.filter((item) => item.type.includes("header")) : [];
+  const links = pageLinks ? pageLinks.filter((item) => item.type.includes("header")) : [];
 
   return (
     <header className={styles.header}>
@@ -32,7 +32,7 @@ const Header = ({ headerLinks }) => {
           <DotsIcon />
         </button>
       </div>
-      <Submenu headerLinks={headerLinks} openModal={openModal} handleClose={() => setOpenModal(false)} />
+      <Submenu pageLinks={pageLinks} openModal={openModal} handleClose={() => setOpenModal(false)} />
     </header>
   );
 };

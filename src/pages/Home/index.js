@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CardsGrid from "../../components/CardsGrid";
 import ClientsSection from "../../components/ClientsSection";
@@ -74,4 +74,4 @@ const Home = () => {
   );
 };
 
-export default memo(Home);
+export default Home;

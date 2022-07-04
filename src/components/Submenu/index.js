@@ -5,9 +5,9 @@ import XIcon from "../../assets/icons/x-icon.svg";
 import TriangleIcon from "../../assets/icons/triangle-icon.svg";
 import styles from "./Submenu.module.css";
 
-const Submenu = ({ handleClose, openModal, headerLinks }) => {
+const Submenu = ({ handleClose, openModal, pageLinks }) => {
   const location = useLocation();
-  const links = headerLinks ? headerLinks.filter((item) => item.type.includes("submenu")) : [];
+  const links = pageLinks ? pageLinks.filter((item) => item.type.includes("submenu")) : [];
 
   const countries = [
     "global",

@@ -1,0 +1,147 @@
+.footerContainer {
+  padding: 60px 40px;
+  background-color: black;
+}
+
+.footerLogo {
+  display: none;
+  width: 88px;
+  height: 25px;
+  margin-right: 100px;
+}
+
+.footerLinks {
+  position: relative;
+  display: flex;
+  padding-bottom: 80px;
+  border-bottom: 1px solid #3e3e3e;
+}
+
+.footerLinks ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.footerLinks li {
+  margin: 20px 0;
+  position: relative;
+}
+
+.footerLinks a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.footerInfo {
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 45px;
+  color: #808080;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.footerInfo span:last-child {
+  margin-top: 25px;
+}
+
+.footerInfo a {
+  color: #808080;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.footerInfo span {
+  display: block;
+  margin-right: 13px;
+}
+
+.topButton {
+  display: none;
+  background-color: white;
+  padding: 90px 0px;
+}
+
+.topButton img {
+  margin: 20px auto;
+}
+
+.socialMediaLinks {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+
+.socialMediaLinks a {
+  color: white;
+  display: block;
+  margin: 10px 0 30px;
+}
+
+.socialMediaLinks img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 1023px) {
+  .footer {
+    display: flex;
+  }
+
+  .topButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #5115f7;
+    font-size: 18px;
+    margin-top: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 120px;
+  }
+
+  .footerContainer {
+    width: calc(100% - 120px);
+  }
+
+  .footerContainer img {
+    display: block;
+  }
+
+  .footerInfo span:last-child {
+    margin-top: 0px;
+  }
+
+  .socialMediaLinks {
+    display: none;
+  }
+
+  .footerLinks {
+    padding-bottom: 60px;
+  }
+
+  .footerLinks li {
+    margin: 0 12px;
+    position: relative;
+  }
+
+  .footerLinks ul,
+  .footerInfo {
+    flex-direction: row;
+  }
+
+  .footerInfo span:not(:last-child) {
+    display: inline-block;
+    margin-right: 36px;
+  }
+}
