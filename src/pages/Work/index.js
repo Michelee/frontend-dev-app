@@ -1,14 +1,13 @@
 import React from "react";
-import Header from "../../components/Header";
+import Layout from "../../components/Layout";
 import styles from "./Work.module.css";
 
 const Work = () => {
   return (
-    <div className={styles.work}>
-      <Header />
-      njnkn
-    </div>
+    <Layout>
+      <div className={styles.work}>Work Page</div>
+    </Layout>
   );
-}
+};
 
 export default Work;

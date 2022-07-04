@@ -23,7 +23,7 @@ const Home = () => {
   const { list, groupBy, filterBy, loading } = posts;
 
   return (
-    <Layout activePage="home">
+    <Layout>
       <div className={styles.home}>
         <div className={styles.heroContainer}>
           <div className={styles.mainText}>

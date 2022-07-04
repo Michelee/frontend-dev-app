@@ -17,5 +17,5 @@ test("renders learn react link", () => {
     </Provider>
   );
 
-  expect(screen.getByText(/Home content/i)).toBeInTheDocument();
+  expect(screen.getByText(/A selection of projects/i)).toBeInTheDocument();
 });

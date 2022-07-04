@@ -5,9 +5,10 @@ jest.mock("axios");
 
 const initialState = {
   list: [],
-  filterBy: "all",
-  groupBy: "all",
+  filterBy: "",
+  groupBy: "",
   loading: false,
+  originalList: [],
 };
 
 describe("Post reducer tests", () => {
@@ -56,10 +57,11 @@ describe("Post reducer tests", () => {
     };
     const state = postsReducer(initialState, action);
     expect(state).toEqual({
+      originalList: [...initialState.list, ...action.payload],
       list: [...initialState.list, ...action.payload],
       loading: false,
-      filterBy: "all",
-      groupBy: "all",
+      filterBy: "",
+      groupBy: "",
     });
   });
 });

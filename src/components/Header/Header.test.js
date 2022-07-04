@@ -1,8 +1,8 @@
 import React from "react";
 import { screen, render, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
+import { pageLinks } from "../../constants/pageLinks";
 import Header from ".";
-import pageLinks from "../../constants/pageLinks";
 
 describe("Header Tests", () => {
   it("Should render the page logo", () => {
